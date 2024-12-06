@@ -1,5 +1,5 @@
 # Use an official OpenJDK 17 image as the base image
-FROM openjdk:23
+FROM openjdk:23-jdk-slim
 
 # Expose the port on which the application will run
 EXPOSE 8080
