@@ -24,3 +24,13 @@ jobs:
     # Step 3: Build the application
     - name: Build Spring Boot App
       run: mvn clean install
+	  
+	- name: Build & push Docker image
+	  uses: mr-smithers-excellent/docker-build-push@v6
+	      with:
+	        image: skpuvvada562/springboot-github-actions
+	        tags: v1, latest
+	        registry: docker.io
+	        dockerfile: Dockerfile
+	        username: ${{ secrets.DOCKER_USERNAME }}
+	        password: ${{ secrets.DOCKER_PASSWORD }}
